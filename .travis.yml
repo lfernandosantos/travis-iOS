@@ -1,5 +1,4 @@
-language: objective-c  #1
-osx_image: xcode10.1 #2
-xcode_project: ProjectTestTravis.xcodeproj #3
-xcode_scheme: ProjectTestTravis #4
-xcode_sdk: iphonesimulator12.0 #5
+os: OSX
+language: swift  #1
+osx_image: xcode12.2 #2
+script: xcodebuild -project ProjectTestTravis.xcodeproj -target ProjectTestTravis -configuration debug -sdk iphonesimulator ONLY_ACTIVE_ARCH=0 CODE_SIGNING_REQUIRED=NO
