@@ -1,4 +1,15 @@
-language: swift
-xcode_project: ProjectTestTravis.xcodeproj # path to your xcodeproj folder
-xcode_scheme: ProjectTestTravis
-xcode_destination: platform=iOS Simulator,OS=10.1,name=iPad Pro (9.7-inch)
+
+language: objective-c
+osx_image: xcode10.1
+env:
+  - DESTINATION="OS=12.1,name=iPhone XS" SCHEME="XLProjectName" SDK=iphonesimulator12.1
+
+before_install:
+- brew update
+- brew outdated carthage || brew upgrade carthage
+- carthage update --platform iOS
+- gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+
+script:
+- xcodebuild clean build -workspace ProjectTestTravis.xcworkspace -scheme "$SCHEME" -sdk "$SDK"
+- xcodebuild test -workspace ProjectTestTravis.xcworkspace -scheme "$SCHEME" -sdk "$SDK" -destination "$DESTINATION" | xcpretty -c
