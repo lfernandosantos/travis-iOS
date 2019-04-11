@@ -322,7 +322,7 @@
 				ED23B78A225E54580054225D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		ED23B78B225E54580054225D /* Build configuration list for PBXNativeTarget "ProjectTestTravis" */ = {
 			isa = XCConfigurationList;
@@ -331,7 +331,7 @@
 				ED23B78D225E54580054225D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
